@@ -1,0 +1,72 @@
+/* LoginPage.css*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(170, 105, 116);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .logintext{
+    font-weight: 600;
+    font-size: 100px;
+  }
+  
+  .login-container {
+    font-size: x-large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  }
+  
+  .login-content {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    color: #333; /* Change text color */
+  }
+  
+  .input-field {
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 30%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .send-otp-btn {
+    margin-bottom: 10px;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: yellowgreen;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .send-otp-btn:hover {
+    background-color: rgb(146, 152, 135);
+  }
+  
+  .verify-otp-btn{
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: yellowgreen;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  .verify-otp-btn:hover{
+    background-color: rgb(146, 152, 135);
+  }

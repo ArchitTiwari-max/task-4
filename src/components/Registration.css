@@ -1,0 +1,57 @@
+/* RegistrationPage.css
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(170, 105, 116);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+.registration-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .registration-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .registration-container p {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 18px;
+  }
+  
+  .registration-container input[type="text"],
+  .registration-container input[type="date"],
+  .registration-container input[type="tel"],
+  .registration-container textarea,
+  .registration-container button {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .registration-container button {
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .registration-container button:hover {
+    background-color: #45a049;
+  }
+   */
