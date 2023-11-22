@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './LoginPage.css';
 
 const LoginPage = () => {
@@ -9,60 +10,31 @@ const LoginPage = () => {
     setEmail(e.target.value);
   };
 
-  const sendOTP = async () => {
+  const handleSendOTP = async () => {
     try {
-      const response = await fetch('https://email-sending-and-verification.onrender.com/user/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
+      const response = await axios.post('https://email-sending-and-verification.onrender.com/user/signup', {
+        userEmail: email // Include the email to which OTP needs to be sent
       });
-
-      if (!response.ok) {
-        throw new Error('Failed to send OTP');
-      }
-
-      const responseData = await response.json();
-      console.log('OTP sent successfully:', responseData);
-      // Handle success or proceed to OTP verification
+      console.log('OTP Sent:', response.data);
+      // Handle success - maybe show a message that OTP has been sent
     } catch (error) {
       console.error('Error sending OTP:', error);
-      // Handle errors or display an error message
+      // Handle error scenarios
     }
-  };
-
-  const verifyOTP = async () => {
-    try {
-      const response = await fetch('https://email-sending-and-verification.onrender.com/user/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, otpCode }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to verify OTP');
-      }
-
-      const responseData = await response.json();
-      console.log('OTP verified successfully:', responseData);
-      // Handle success or proceed with login/authentication
-    } catch (error) {
-      console.error('Error verifying OTP:', error);
-      // Handle errors or display an error message
-    }
-  };
-
-  const handleSendOTP = async () => {
-    // Call the sendOTP function when the button is clicked
-    await sendOTP();
   };
 
   const handleVerifyOTP = async () => {
-    // Call the verifyOTP function when verifying OTP
-    await verifyOTP();
+    try {
+      const response = await axios.post('https://email-sending-and-verification.onrender.com/emailverify/signup', {
+        userEmail: email, // Include the email for which OTP is being verified
+        otp: otpCode // Include the OTP entered by the user
+      });
+      console.log('OTP Verified:', response.data);
+      // Handle success - maybe proceed with login or some action
+    } catch (error) {
+      console.error('Error verifying OTP:', error);
+      // Handle error scenarios
+    }
   };
 
   return (
@@ -91,4 +63,5 @@ const LoginPage = () => {
     </div>
   );
 };
+
 export default LoginPage;
